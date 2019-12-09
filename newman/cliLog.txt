@@ -1,0 +1,241 @@
+newman
+
+PLAY_SMART_WITH_THE_BACKEND
+
+□ ECHO_SERVICE
+└ setup & utils
+  ┌
+  │ 'PLAY_SMART_WITH_THE_BACKEND Collection Pre-request Sc
+  │ ripts'
+  │ 'ECHO_SERVICE FOLDER Pre-request Scripts'
+  │ "'setup & utils' Request Pre-request Script"
+  └
+  HEAD https://www.google.com [400 Bad Request, 157B, 286ms]
+  ┌
+  │ 'PLAY_SMART_WITH_THE_BACKEND Collection Tests'
+  │ 'ECHO_SERVICE Folder Tests'
+  │ "'setup & utils' Request Tests"
+  └
+
+└ JSON body
+  ┌
+  │ 'PLAY_SMART_WITH_THE_BACKEND Collection Pre-request Sc
+  │ ripts'
+  │ 'ECHO_SERVICE FOLDER Pre-request Scripts'
+  └
+  POST https://postman-echo.com/post [200 OK, 706B, 560ms]
+  ┌
+  │ 'PLAY_SMART_WITH_THE_BACKEND Collection Tests'
+  │ 'ECHO_SERVICE Folder Tests'
+  └
+  1. Validate user (deep equal)
+  √  Validate user.name
+  2. Validate user.age
+  √  Validate user.isAdmin
+  √  Validate user.resourceIds[0]
+  3. Validate user.resourceIds[1]
+  √  Validate user.resourceIds[2]
+
+└ query string parameters
+  ┌
+  │ 'PLAY_SMART_WITH_THE_BACKEND Collection Pre-request Sc
+  │ ripts'
+  │ 'ECHO_SERVICE FOLDER Pre-request Scripts'
+  └
+  POST https://postman-echo.com/post?company=nagarro&location=timisoara&department=qa [200 OK, 808B, 168ms]
+  ┌
+  │ 'PLAY_SMART_WITH_THE_BACKEND Collection Tests'
+  │ 'ECHO_SERVICE Folder Tests'
+  └
+  √  Validate args.company
+  √  Validate args.location
+  √  Validate args.department
+
+└ form data
+  ┌
+  │ 'PLAY_SMART_WITH_THE_BACKEND Collection Pre-request Sc
+  │ ripts'
+  │ 'ECHO_SERVICE FOLDER Pre-request Scripts'
+  └
+  POST https://postman-echo.com/post?user=100 [200 OK, 696B, 166ms]
+  ┌
+  │ 'PLAY_SMART_WITH_THE_BACKEND Collection Tests'
+  │ 'ECHO_SERVICE Folder Tests'
+  └
+  √  Validate form.email
+  √  Validate form.username
+
+└ delay 2s
+  ┌
+  │ 'PLAY_SMART_WITH_THE_BACKEND Collection Pre-request Sc
+  │ ripts'
+  │ 'ECHO_SERVICE FOLDER Pre-request Scripts'
+  └
+  GET https://postman-echo.com/delay/2 [200 OK, 239B, 2.2s]
+  ┌
+  │ 'PLAY_SMART_WITH_THE_BACKEND Collection Tests'
+  │ 'ECHO_SERVICE Folder Tests'
+  └
+  √  Status code is 200
+  √  Status code name is OK
+  √  Response time is above 2000ms
+  ┌
+  │ 'Headers [\n  {\n    "key": "Content-Type",\n    "valu
+  │ e": "application/json; charset=utf-8"\n  },\n  {\n    
+  │ "key": "Date",\n    "value": "Mon, 09 Dec 2019 14:56:5
+  │ 7 GMT"\n  },\n  {\n    "key": "ETag",\n    "value": "W
+  │ /\\"d-vb8pS8uHJYunqF73qADGxcv0Je8\\""\n  },\n  {\n    
+  │ "key": "Server",\n    "value": "nginx"\n  },\n  {\n   
+  │  "key": "Vary",\n    "value": "Accept-Encoding"\n  },\
+  │ n  {\n    "key": "Content-Length",\n    "value": "13"\
+  │ n  },\n  {\n    "key": "Connection",\n    "value": "ke
+  │ ep-alive"\n  }\n]'
+  └
+  √  Response body size is 13 B
+  √  Response delay is 2
+
+□ RESTFUL_BOOKER
+└ health check
+  ┌
+  │ 'PLAY_SMART_WITH_THE_BACKEND Collection Pre-request Sc
+  │ ripts'
+  └
+  GET https://restful-booker.herokuapp.com/ping [201 Created, 248B, 569ms]
+  ┌
+  │ 'PLAY_SMART_WITH_THE_BACKEND Collection Tests'
+  └
+  √  Status code is 200 or 201
+  √  Response time is less than 1000ms
+  √  Status code name is "Created"
+  √  Response text is "Created"
+
+└ create token
+  ┌
+  │ 'PLAY_SMART_WITH_THE_BACKEND Collection Pre-request Sc
+  │ ripts'
+  └
+  POST https://restful-booker.herokuapp.com/auth [200 OK, 271B, 131ms]
+  ┌
+  │ 'PLAY_SMART_WITH_THE_BACKEND Collection Tests'
+  └
+  √  Status code is 200 or 201
+  √  Response time is less than 1000ms
+  ┌
+  │ { token: '02708194bc4ffae' }
+  │ '{\n  "token": "02708194bc4ffae"\n}'
+  │ 'jsonData.token: 02708194bc4ffae'
+  │ 'jsonData.value undefined'
+  └
+  √  Token is retrieven as a string
+
+└ bookings ids
+  ┌
+  │ 'PLAY_SMART_WITH_THE_BACKEND Collection Pre-request Sc
+  │ ripts'
+  └
+  GET https://restful-booker.herokuapp.com/booking [200 OK, 424B, 126ms]
+  ┌
+  │ 'PLAY_SMART_WITH_THE_BACKEND Collection Tests'
+  └
+  √  Status code is 200 or 201
+  √  Response time is less than 1000ms
+
+└ create booking
+  ┌
+  │ 'PLAY_SMART_WITH_THE_BACKEND Collection Pre-request Sc
+  │ ripts'
+  └
+  POST https://restful-booker.herokuapp.com/booking [200 OK, 440B, 130ms]
+  ┌
+  │ 'PLAY_SMART_WITH_THE_BACKEND Collection Tests'
+  └
+  √  Status code is 200 or 201
+  √  Response time is less than 1000ms
+  ┌
+  │ 'New booking id: 14'
+  └
+
+└ booking by id
+  ┌
+  │ 'PLAY_SMART_WITH_THE_BACKEND Collection Pre-request Sc
+  │ ripts'
+  └
+  GET https://restful-booker.herokuapp.com/booking/14 [200 OK, 413B, 124ms]
+  ┌
+  │ 'PLAY_SMART_WITH_THE_BACKEND Collection Tests'
+  └
+  √  Status code is 200 or 201
+  √  Response time is less than 1000ms
+
+└ update booking
+  ┌
+  │ 'PLAY_SMART_WITH_THE_BACKEND Collection Pre-request Sc
+  │ ripts'
+  └
+  PUT https://restful-booker.herokuapp.com/booking/14 [200 OK, 409B, 133ms]
+  ┌
+  │ 'PLAY_SMART_WITH_THE_BACKEND Collection Tests'
+  └
+  √  Status code is 200 or 201
+  √  Response time is less than 1000ms
+
+└ partial update booking
+  ┌
+  │ 'PLAY_SMART_WITH_THE_BACKEND Collection Pre-request Sc
+  │ ripts'
+  └
+  PATCH https://restful-booker.herokuapp.com/booking/14 [200 OK, 409B, 136ms]
+  ┌
+  │ 'PLAY_SMART_WITH_THE_BACKEND Collection Tests'
+  └
+  √  Status code is 200 or 201
+  √  Response time is less than 1000ms
+
+└ delete booking
+  ┌
+  │ 'PLAY_SMART_WITH_THE_BACKEND Collection Pre-request Sc
+  │ ripts'
+  └
+  DELETE https://restful-booker.herokuapp.com/booking/14 [201 Created, 248B, 130ms]
+  ┌
+  │ 'PLAY_SMART_WITH_THE_BACKEND Collection Tests'
+  └
+  √  Status code is 200 or 201
+  √  Response time is less than 1000ms
+
+┌─────────────────────────┬────────────────────┬────────────────────┐
+│                         │           executed │             failed │
+├─────────────────────────┼────────────────────┼────────────────────┤
+│              iterations │                  1 │                  0 │
+├─────────────────────────┼────────────────────┼────────────────────┤
+│                requests │                 13 │                  0 │
+├─────────────────────────┼────────────────────┼────────────────────┤
+│            test-scripts │                 39 │                  0 │
+├─────────────────────────┼────────────────────┼────────────────────┤
+│      prerequest-scripts │                 38 │                  0 │
+├─────────────────────────┼────────────────────┼────────────────────┤
+│              assertions │                 36 │                  3 │
+├─────────────────────────┴────────────────────┴────────────────────┤
+│ total run duration: 5.5s                                          │
+├───────────────────────────────────────────────────────────────────┤
+│ total data received: 2.08KB (approx)                              │
+├───────────────────────────────────────────────────────────────────┤
+│ average response time: 371ms [min: 124ms, max: 2.2s, s.d.: 540ms] │
+└───────────────────────────────────────────────────────────────────┘
+
+  #  failure         detail                                                                           
+                                                                                                      
+ 1.  AssertionError  Validate user (deep equal)                                                       
+                     expected { Object (name, age, ...) } to deeply equal { Object (name, age, ...) } 
+                     at assertion:0 in test-script                                                    
+                     inside "ECHO_SERVICE / JSON body"                                                
+                                                                                                      
+ 2.  AssertionError  Validate user.age                                                                
+                     expected 50 to deeply equal 31                                                   
+                     at assertion:2 in test-script                                                    
+                     inside "ECHO_SERVICE / JSON body"                                                
+                                                                                                      
+ 3.  AssertionError  Validate user.resourceIds[1]                                                     
+                     expected 1112 to deeply equal 1110                                               
+                     at assertion:5 in test-script                                                    
+                     inside "ECHO_SERVICE / JSON body"                                                
