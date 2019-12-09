@@ -10,12 +10,42 @@ PLAY_SMART_WITH_THE_BACKEND
   │ 'ECHO_SERVICE FOLDER Pre-request Scripts'
   │ "'setup & utils' Request Pre-request Script"
   └
-  HEAD https://www.google.com [400 Bad Request, 157B, 286ms]
+  HEAD https://www.google.com [400 Bad Request, 157B, 348ms]
   ┌
   │ 'PLAY_SMART_WITH_THE_BACKEND Collection Tests'
   │ 'ECHO_SERVICE Folder Tests'
   │ "'setup & utils' Request Tests"
   └
+
+└ 500 Internal Server Error
+  ┌
+  │ 'PLAY_SMART_WITH_THE_BACKEND Collection Pre-request Sc
+  │ ripts'
+  │ 'ECHO_SERVICE FOLDER Pre-request Scripts'
+  └
+  GET https://postman-echo.com/status/500 [500 Internal Server Error, 385B, 747ms]
+  ┌
+  │ 'PLAY_SMART_WITH_THE_BACKEND Collection Tests'
+  │ 'ECHO_SERVICE Folder Tests'
+  └
+  1. Status code is 200
+
+└ local IP
+  ┌
+  │ 'PLAY_SMART_WITH_THE_BACKEND Collection Pre-request Sc
+  │ ripts'
+  │ 'ECHO_SERVICE FOLDER Pre-request Scripts'
+  └
+  GET https://postman-echo.com/ip [200 OK, 295B, 134ms]
+  ┌
+  │ 'PLAY_SMART_WITH_THE_BACKEND Collection Tests'
+  │ 'ECHO_SERVICE Folder Tests'
+  └
+  √  Status code is 200
+  ┌
+  │ 'ip: 193.104.150.200'
+  └
+  √  Response JSON "ip" property matches an IP Regex
 
 └ JSON body
   ┌
@@ -23,17 +53,17 @@ PLAY_SMART_WITH_THE_BACKEND
   │ ripts'
   │ 'ECHO_SERVICE FOLDER Pre-request Scripts'
   └
-  POST https://postman-echo.com/post [200 OK, 706B, 560ms]
+  POST https://postman-echo.com/post [200 OK, 804B, 127ms]
   ┌
   │ 'PLAY_SMART_WITH_THE_BACKEND Collection Tests'
   │ 'ECHO_SERVICE Folder Tests'
   └
-  1. Validate user (deep equal)
+  2. Validate user (deep equal)
   √  Validate user.name
-  2. Validate user.age
+  3. Validate user.age
   √  Validate user.isAdmin
   √  Validate user.resourceIds[0]
-  3. Validate user.resourceIds[1]
+  4. Validate user.resourceIds[1]
   √  Validate user.resourceIds[2]
 
 └ query string parameters
@@ -42,7 +72,7 @@ PLAY_SMART_WITH_THE_BACKEND
   │ ripts'
   │ 'ECHO_SERVICE FOLDER Pre-request Scripts'
   └
-  POST https://postman-echo.com/post?company=nagarro&location=timisoara&department=qa [200 OK, 808B, 168ms]
+  POST https://postman-echo.com/post?company=nagarro&location=timisoara&department=qa [200 OK, 812B, 130ms]
   ┌
   │ 'PLAY_SMART_WITH_THE_BACKEND Collection Tests'
   │ 'ECHO_SERVICE Folder Tests'
@@ -57,7 +87,7 @@ PLAY_SMART_WITH_THE_BACKEND
   │ ripts'
   │ 'ECHO_SERVICE FOLDER Pre-request Scripts'
   └
-  POST https://postman-echo.com/post?user=100 [200 OK, 696B, 166ms]
+  POST https://postman-echo.com/post [200 OK, 809B, 127ms]
   ┌
   │ 'PLAY_SMART_WITH_THE_BACKEND Collection Tests'
   │ 'ECHO_SERVICE Folder Tests'
@@ -71,7 +101,7 @@ PLAY_SMART_WITH_THE_BACKEND
   │ ripts'
   │ 'ECHO_SERVICE FOLDER Pre-request Scripts'
   └
-  GET https://postman-echo.com/delay/2 [200 OK, 239B, 2.2s]
+  GET https://postman-echo.com/delay/2 [200 OK, 361B, 2.1s]
   ┌
   │ 'PLAY_SMART_WITH_THE_BACKEND Collection Tests'
   │ 'ECHO_SERVICE Folder Tests'
@@ -82,10 +112,13 @@ PLAY_SMART_WITH_THE_BACKEND
   ┌
   │ 'Headers [\n  {\n    "key": "Content-Type",\n    "valu
   │ e": "application/json; charset=utf-8"\n  },\n  {\n    
-  │ "key": "Date",\n    "value": "Mon, 09 Dec 2019 14:56:5
-  │ 7 GMT"\n  },\n  {\n    "key": "ETag",\n    "value": "W
+  │ "key": "Date",\n    "value": "Mon, 09 Dec 2019 17:21:5
+  │ 3 GMT"\n  },\n  {\n    "key": "ETag",\n    "value": "W
   │ /\\"d-vb8pS8uHJYunqF73qADGxcv0Je8\\""\n  },\n  {\n    
   │ "key": "Server",\n    "value": "nginx"\n  },\n  {\n   
+  │  "key": "set-cookie",\n    "value": "sails.sid=s%3AOUU
+  │ qRy679OAvrYuneqh-v97bukhH3NS0.SlRnRf3rMF9zgqLJyZGIfJOS
+  │ m35KUW7kRnhqddt22ww; Path=/; HttpOnly"\n  },\n  {\n   
   │  "key": "Vary",\n    "value": "Accept-Encoding"\n  },\
   │ n  {\n    "key": "Content-Length",\n    "value": "13"\
   │ n  },\n  {\n    "key": "Connection",\n    "value": "ke
@@ -100,7 +133,7 @@ PLAY_SMART_WITH_THE_BACKEND
   │ 'PLAY_SMART_WITH_THE_BACKEND Collection Pre-request Sc
   │ ripts'
   └
-  GET https://restful-booker.herokuapp.com/ping [201 Created, 248B, 569ms]
+  GET https://restful-booker.herokuapp.com/ping [201 Created, 248B, 627ms]
   ┌
   │ 'PLAY_SMART_WITH_THE_BACKEND Collection Tests'
   └
@@ -114,16 +147,16 @@ PLAY_SMART_WITH_THE_BACKEND
   │ 'PLAY_SMART_WITH_THE_BACKEND Collection Pre-request Sc
   │ ripts'
   └
-  POST https://restful-booker.herokuapp.com/auth [200 OK, 271B, 131ms]
+  POST https://restful-booker.herokuapp.com/auth [200 OK, 271B, 146ms]
   ┌
   │ 'PLAY_SMART_WITH_THE_BACKEND Collection Tests'
   └
   √  Status code is 200 or 201
   √  Response time is less than 1000ms
   ┌
-  │ { token: '02708194bc4ffae' }
-  │ '{\n  "token": "02708194bc4ffae"\n}'
-  │ 'jsonData.token: 02708194bc4ffae'
+  │ { token: '6c61e843847bb22' }
+  │ '{\n  "token": "6c61e843847bb22"\n}'
+  │ 'jsonData.token: 6c61e843847bb22'
   │ 'jsonData.value undefined'
   └
   √  Token is retrieven as a string
@@ -133,7 +166,7 @@ PLAY_SMART_WITH_THE_BACKEND
   │ 'PLAY_SMART_WITH_THE_BACKEND Collection Pre-request Sc
   │ ripts'
   └
-  GET https://restful-booker.herokuapp.com/booking [200 OK, 424B, 126ms]
+  GET https://restful-booker.herokuapp.com/booking [200 OK, 407B, 128ms]
   ┌
   │ 'PLAY_SMART_WITH_THE_BACKEND Collection Tests'
   └
@@ -145,14 +178,14 @@ PLAY_SMART_WITH_THE_BACKEND
   │ 'PLAY_SMART_WITH_THE_BACKEND Collection Pre-request Sc
   │ ripts'
   └
-  POST https://restful-booker.herokuapp.com/booking [200 OK, 440B, 130ms]
+  POST https://restful-booker.herokuapp.com/booking [200 OK, 440B, 134ms]
   ┌
   │ 'PLAY_SMART_WITH_THE_BACKEND Collection Tests'
   └
   √  Status code is 200 or 201
   √  Response time is less than 1000ms
   ┌
-  │ 'New booking id: 14'
+  │ 'New booking id: 11'
   └
 
 └ booking by id
@@ -160,7 +193,7 @@ PLAY_SMART_WITH_THE_BACKEND
   │ 'PLAY_SMART_WITH_THE_BACKEND Collection Pre-request Sc
   │ ripts'
   └
-  GET https://restful-booker.herokuapp.com/booking/14 [200 OK, 413B, 124ms]
+  GET https://restful-booker.herokuapp.com/booking/11 [200 OK, 413B, 129ms]
   ┌
   │ 'PLAY_SMART_WITH_THE_BACKEND Collection Tests'
   └
@@ -172,7 +205,7 @@ PLAY_SMART_WITH_THE_BACKEND
   │ 'PLAY_SMART_WITH_THE_BACKEND Collection Pre-request Sc
   │ ripts'
   └
-  PUT https://restful-booker.herokuapp.com/booking/14 [200 OK, 409B, 133ms]
+  PUT https://restful-booker.herokuapp.com/booking/11 [200 OK, 409B, 137ms]
   ┌
   │ 'PLAY_SMART_WITH_THE_BACKEND Collection Tests'
   └
@@ -184,7 +217,7 @@ PLAY_SMART_WITH_THE_BACKEND
   │ 'PLAY_SMART_WITH_THE_BACKEND Collection Pre-request Sc
   │ ripts'
   └
-  PATCH https://restful-booker.herokuapp.com/booking/14 [200 OK, 409B, 136ms]
+  PATCH https://restful-booker.herokuapp.com/booking/11 [200 OK, 409B, 129ms]
   ┌
   │ 'PLAY_SMART_WITH_THE_BACKEND Collection Tests'
   └
@@ -196,7 +229,7 @@ PLAY_SMART_WITH_THE_BACKEND
   │ 'PLAY_SMART_WITH_THE_BACKEND Collection Pre-request Sc
   │ ripts'
   └
-  DELETE https://restful-booker.herokuapp.com/booking/14 [201 Created, 248B, 130ms]
+  DELETE https://restful-booker.herokuapp.com/booking/11 [201 Created, 248B, 133ms]
   ┌
   │ 'PLAY_SMART_WITH_THE_BACKEND Collection Tests'
   └
@@ -208,34 +241,39 @@ PLAY_SMART_WITH_THE_BACKEND
 ├─────────────────────────┼────────────────────┼────────────────────┤
 │              iterations │                  1 │                  0 │
 ├─────────────────────────┼────────────────────┼────────────────────┤
-│                requests │                 13 │                  0 │
+│                requests │                 15 │                  0 │
 ├─────────────────────────┼────────────────────┼────────────────────┤
-│            test-scripts │                 39 │                  0 │
+│            test-scripts │                 45 │                  0 │
 ├─────────────────────────┼────────────────────┼────────────────────┤
-│      prerequest-scripts │                 38 │                  0 │
+│      prerequest-scripts │                 42 │                  0 │
 ├─────────────────────────┼────────────────────┼────────────────────┤
-│              assertions │                 36 │                  3 │
+│              assertions │                 39 │                  4 │
 ├─────────────────────────┴────────────────────┴────────────────────┤
-│ total run duration: 5.5s                                          │
+│ total run duration: 6s                                            │
 ├───────────────────────────────────────────────────────────────────┤
-│ total data received: 2.08KB (approx)                              │
+│ total data received: 2.2KB (approx)                               │
 ├───────────────────────────────────────────────────────────────────┤
-│ average response time: 371ms [min: 124ms, max: 2.2s, s.d.: 540ms] │
+│ average response time: 353ms [min: 127ms, max: 2.1s, s.d.: 509ms] │
 └───────────────────────────────────────────────────────────────────┘
 
   #  failure         detail                                                                           
                                                                                                       
- 1.  AssertionError  Validate user (deep equal)                                                       
+ 1.  AssertionError  Status code is 200                                                               
+                     expected response to have status code 200 but got 500                            
+                     at assertion:0 in test-script                                                    
+                     inside "ECHO_SERVICE / 500 Internal Server Error"                                
+                                                                                                      
+ 2.  AssertionError  Validate user (deep equal)                                                       
                      expected { Object (name, age, ...) } to deeply equal { Object (name, age, ...) } 
                      at assertion:0 in test-script                                                    
                      inside "ECHO_SERVICE / JSON body"                                                
                                                                                                       
- 2.  AssertionError  Validate user.age                                                                
+ 3.  AssertionError  Validate user.age                                                                
                      expected 50 to deeply equal 31                                                   
                      at assertion:2 in test-script                                                    
                      inside "ECHO_SERVICE / JSON body"                                                
                                                                                                       
- 3.  AssertionError  Validate user.resourceIds[1]                                                     
+ 4.  AssertionError  Validate user.resourceIds[1]                                                     
                      expected 1112 to deeply equal 1110                                               
                      at assertion:5 in test-script                                                    
                      inside "ECHO_SERVICE / JSON body"                                                

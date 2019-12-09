@@ -119,6 +119,80 @@
 					"response": []
 				},
 				{
+					"name": "500 Internal Server Error",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "0165a1fb-8984-43ca-8fb2-f61851a37a7f",
+								"exec": [
+									"pm.test('Status code is 200', ",
+									"    () =>pm.response.to.have.status(200)",
+									");"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{POSTMAN_ECHO_URL}}/status/500",
+							"host": [
+								"{{POSTMAN_ECHO_URL}}"
+							],
+							"path": [
+								"status",
+								"500"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "local IP",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "0165a1fb-8984-43ca-8fb2-f61851a37a7f",
+								"exec": [
+									"pm.test('Status code is 200', ",
+									"    () => pm.response.to.have.status(200)",
+									");",
+									"",
+									"pm.test('Response JSON \"ip\" property matches an IP Regex',",
+									"    () => {",
+									"        const ip = pm.response.json().ip;",
+									"        console.log(`ip: ${ip}`);",
+									"        ",
+									"        const ipMatcherRegex = /^\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}$/;",
+									"        ",
+									"        pm.expect(ip).to.match(ipMatcherRegex);",
+									"    }",
+									");"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{POSTMAN_ECHO_URL}}/ip",
+							"host": [
+								"{{POSTMAN_ECHO_URL}}"
+							],
+							"path": [
+								"ip"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "JSON body",
 					"event": [
 						{
@@ -328,20 +402,12 @@
 							}
 						},
 						"url": {
-							"raw": "https://postman-echo.com/post?user=100",
-							"protocol": "https",
+							"raw": "{{POSTMAN_ECHO_URL}}/post",
 							"host": [
-								"postman-echo",
-								"com"
+								"{{POSTMAN_ECHO_URL}}"
 							],
 							"path": [
 								"post"
-							],
-							"query": [
-								{
-									"key": "user",
-									"value": "100"
-								}
 							]
 						}
 					},
