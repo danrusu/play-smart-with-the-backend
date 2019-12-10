@@ -1,9 +1,13 @@
-var text = 'the quick brown fox jumps over the lazy dog';
+'use strict';
 
-var allLetters = [...text].filter(letter => letter !== ' ');
+(() => {
+  const text = 'the quick brown fox jumps over the lazy dog';
 
-var allUniqueLetters = [...new Set(allLetters)].sort();
+  const allLetters = [...text].filter(letter => letter !== ' ');
 
-console.log(`English letters count: ${allUniqueLetters.length}`);
+  const allUniqueLetters = [...new Set(allLetters)].sort();
+
+  console.log(`English letters count: ${allUniqueLetters.length}`);
   
-console.log(`All english letters: ${allUniqueLetters}`);
+  console.log(`All english letters: ${allUniqueLetters}`);
+})();
