@@ -1,6 +1,6 @@
 # Play smart with the backend
 
-1. Prerequisites
+### 1. Prerequisites
 
     - [Install Postman ](https://www.getpostman.com/downloads/)
 
@@ -8,15 +8,15 @@
     
     - [Git](https://git-scm.com/downloads) - optional
 
-2. [Presentation](https://github.com/danrusu/play-smart-with-the-backend/blob/master/Play_smart_with_the_backend.pdf)
+### 2. [Presentation](https://github.com/danrusu/play-smart-with-the-backend/blob/master/Play_smart_with_the_backend.pdf)
 
-3. Clone or download the repository
+### 3. Clone or download the repository
    ```
    git clone https://github.com/danrusu/play-smart-with-the-backend.git
    cd play-smart-with-the-backend
    ```
 
-4. Newman 
+### 4. Newman 
 
    - installation 
    ```
