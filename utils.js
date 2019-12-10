@@ -12,3 +12,6 @@ function getRandomInRange(min, max){
     return Math.round(Math.random() * (max - min) + min);
 }
 // const getRandomInRange = (min, max) => Math.round(Math.random() * (max - min) + min);
+
+// Save this snippet in Chrome and add more utilities. 
+// You can test 'prettify' and 'prettyLog' with http://danrusu.ro/test/sportcar.json
