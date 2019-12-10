@@ -5,10 +5,18 @@
     - [Install Postman ](https://www.getpostman.com/downloads/)
 
     - [Install Node.js](https://nodejs.org/en/download/)
+    
+    - [Git](https://git-scm.com/downloads) - optional
 
 2. [Presentation](https://github.com/danrusu/play-smart-with-the-backend/blob/master/Play_smart_with_the_backend.pdf)
 
-3. Newman 
+3. Clone or download the repository
+   ```
+   git clone https://github.com/danrusu/play-smart-with-the-backend.git
+   cd play-smart-with-the-backend
+   ```
+
+4. Newman 
 
    - installation 
    ```
@@ -18,6 +26,7 @@
 
    - run the PLAY_SMART_WITH_THE_BACKEND collection 
    ```
+   cd postman  
    newman run PLAY_SMART_WITH_THE_BACKEND.postman_collection.json -e PLAY_SMART_WITH_THE_BACKEND.postman_environment.json
    ```
 
@@ -36,6 +45,5 @@
    newman run PLAY_SMART_WITH_THE_BACKEND.postman_collection.json -e PLAY_SMART_WITH_THE_BACKEND.postman_environment.json -r json,cli,html,htmlextra,junitfull
 
    cd newman
-
    ls
    ```
