@@ -2,11 +2,11 @@
 
 ### 1. Prerequisites
 
-    - [Install Postman ](https://www.getpostman.com/downloads/)
+  - [Install Postman](https://www.getpostman.com/downloads/)
 
-    - [Install Node.js](https://nodejs.org/en/download/)
+  - [Install Node.js](https://nodejs.org/en/download/)
     
-    - [Git](https://git-scm.com/downloads) - optional
+  - [Git](https://git-scm.com/downloads) - optional
 
 ### 2. [Presentation](https://github.com/danrusu/play-smart-with-the-backend/blob/master/Play_smart_with_the_backend.pdf)
 
