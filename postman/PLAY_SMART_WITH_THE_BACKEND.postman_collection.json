@@ -311,11 +311,9 @@
 							}
 						],
 						"url": {
-							"raw": "https://postman-echo.com/post?company=nagarro&location=timisoara&department=qa",
-							"protocol": "https",
+							"raw": "{{POSTMAN_ECHO_URL}}/post?company=nagarro&location=timisoara&department=qa",
 							"host": [
-								"postman-echo",
-								"com"
+								"{{POSTMAN_ECHO_URL}}"
 							],
 							"path": [
 								"post"
