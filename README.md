@@ -30,31 +30,33 @@ npm install -g newman
 newman run -h
 ```
 
-- run the PLAY_SMART_WITH_THE_BACKEND collection
+- execution
 
-```bash
-cd postman
-newman run PLAY_SMART_WITH_THE_BACKEND.postman_collection.json -e PLAY_SMART_WITH_THE_BACKEND.postman_environment.json
-```
-
-- run only specific folder from collection
-
-```bash
-newman run PLAY_SMART_WITH_THE_BACKEND.postman_collection.json -e PLAY_SMART_WITH_THE_BACKEND.postman_environment.json --folder ECHO_SERVICE
-
-newman run PLAY_SMART_WITH_THE_BACKEND.postman_collection.json -e PLAY_SMART_WITH_THE_BACKEND.postman_environment.json --folder RESTFUL_BOOKER
-```
-
-- newman reporters
-
-  - install
+  - run the PLAY_SMART_WITH_THE_BACKEND collection
 
   ```bash
-   npm install -g newman-reporter-htmlextra newman-reporter-junitfull
+  cd postman
+  newman run PLAY_SMART_WITH_THE_BACKEND.postman_collection.json -e PLAY_SMART_WITH_THE_BACKEND.postman_environment.json
   ```
 
-  - run with reporters enabled
+  - run only specific folder from collection
 
   ```bash
-  newman run PLAY_SMART_WITH_THE_BACKEND.postman_collection.json -e PLAY_SMART_WITH_THE_BACKEND.postman_environment.json -r json,cli,html,htmlextra,junitfull
+  newman run PLAY_SMART_WITH_THE_BACKEND.postman_collection.json -e PLAY_SMART_WITH_THE_BACKEND.postman_environment.json --folder ECHO_SERVICE
+
+  newman run PLAY_SMART_WITH_THE_BACKEND.postman_collection.json -e PLAY_SMART_WITH_THE_BACKEND.postman_environment.json --folder RESTFUL_BOOKER
   ```
+
+  - newman reporters
+
+    - install
+
+    ```bash
+     npm install -g newman-reporter-htmlextra newman-reporter-junitfull
+    ```
+
+    - run with reporters enabled
+
+    ```bash
+    newman run PLAY_SMART_WITH_THE_BACKEND.postman_collection.json -e PLAY_SMART_WITH_THE_BACKEND.postman_environment.json -r json,cli,html,htmlextra,junitfull
+    ```
