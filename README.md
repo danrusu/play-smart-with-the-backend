@@ -30,12 +30,11 @@ npm install -g newman
 newman run -h
 ```
 
-- execution
+- execution (from `postman` folder)
 
   - run the PLAY_SMART_WITH_THE_BACKEND collection
 
   ```bash
-  cd postman
   newman run PLAY_SMART_WITH_THE_BACKEND.postman_collection.json -e PLAY_SMART_WITH_THE_BACKEND.postman_environment.json
   ```
 
@@ -58,5 +57,19 @@ newman run -h
     - run with reporters enabled
 
     ```bash
-    newman run PLAY_SMART_WITH_THE_BACKEND.postman_collection.json -e PLAY_SMART_WITH_THE_BACKEND.postman_environment.json -r json,cli,html,htmlextra,junitfull
+    newman run PLAY_SMART_WITH_THE_BACKEND.postman_collection.json -e PLAY_SMART_WITH_THE_BACKEND.postman_environment.json -r json,cli,htmlextra,junitfull
     ```
+
+- Docker execution
+
+  - build image
+
+  ```bash
+  docker build -t newman .
+  ```
+
+  - run container
+
+  ```bash
+  docker run --rm -v /$(pwd)/postman:/opt/test newman
+  ```
