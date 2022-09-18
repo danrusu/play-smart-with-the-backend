@@ -60,7 +60,7 @@ newman run -h
     newman run PLAY_SMART_WITH_THE_BACKEND.postman_collection.json -e PLAY_SMART_WITH_THE_BACKEND.postman_environment.json -r json,cli,htmlextra,junitfull
     ```
 
-- Docker execution
+- Docker execution (from project root)
 
   - build image
 
