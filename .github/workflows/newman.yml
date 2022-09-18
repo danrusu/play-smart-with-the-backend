@@ -1,4 +1,4 @@
-name: API tests
+name: API TESTS
 
 on:
   # schedule:
@@ -14,12 +14,18 @@ jobs:
     steps:
       - name: Check out code
         uses: actions/checkout@v2
+
+      - name: Create artifacts folder
+        run: mkdir -m 777 artifacts
+
       - name: Build docker image
         run: docker build -t newman .
+
       - name: Run tests
-        run: docker run --rm -v /$(pwd)/reports:/opt/test/newman newman
+        run: docker run --rm -v /$(pwd)/artifacts:/opt/test/newman newman
+
       - uses: actions/upload-artifact@v3
         if: always()
         with:
           name: my-artifact
-          path: ./reports
+          path: ./artifacts
