@@ -1,4 +1,4 @@
-### POC - Get all unique letters from a string
+### JavaScript POC - Get all unique letters from a string
 
 ```javascript
 (() => {
