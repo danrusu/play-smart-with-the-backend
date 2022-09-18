@@ -2,7 +2,7 @@ FROM node:18-alpine3.15
 
 WORKDIR /opt/test
 
-COPY postman/* ./
+COPY postman/*.json ./
 
 RUN npm install -g \
   newman \
