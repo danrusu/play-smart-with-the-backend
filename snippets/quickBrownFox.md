@@ -2,13 +2,24 @@
 
 ```javascript
 (() => {
-  const text = 'the quick brown fox jumps over the lazy dog';
+  const text = 'The quick brown FOX jumps over the lazy DOG.';
 
-  const allLetters = [...text].filter(letter => letter !== ' ');
-  const allUniqueLetters = [...new Set(allLetters)].sort();
+  const isLetter = letter => letter.toLowerCase() !== letter.toUpperCase();
+  const toLowerCase = letter => letter.toLowerCase();
 
-  console.log(`English letters count: ${allUniqueLetters.length}`);  
-  console.log(`All english letters: ${allUniqueLetters}`);
+  const textTokens = [...text];
+  console.log(`textTokens [${textTokens.length}]: ${textTokens}`);
+
+  const allLetters = textTokens.filter(isLetter).map(toLowerCase);
+  console.log(`allLetters [${allLetters.length}]: ${allLetters}`);
+
+  const uniqueLetters = [...new Set(allLetters)];
+  console.log(`uniqueLetters [${uniqueLetters.length}]: ${uniqueLetters}`);
+
+  uniqueLetters.sort();
+  console.log(
+    `sortedEnglishLetters [${uniqueLetters.length}]: ${uniqueLetters}`
+  );
 })();
 ```
 
