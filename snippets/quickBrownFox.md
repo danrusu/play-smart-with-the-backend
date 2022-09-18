@@ -8,24 +8,26 @@
   const toLowerCase = letter => letter.toLowerCase();
 
   const textTokens = [...text];
-  console.log(`textTokens [${textTokens.length}]: ${textTokens}`);
-
   const allLetters = textTokens.filter(isLetter).map(toLowerCase);
-  console.log(`allLetters [${allLetters.length}]: ${allLetters}`);
-
   const uniqueLetters = [...new Set(allLetters)];
-  console.log(`uniqueLetters [${uniqueLetters.length}]: ${uniqueLetters}`);
+  const sortedEnglishLetters = [...uniqueLetters].sort();
 
-  uniqueLetters.sort();
-  console.log(
-    `sortedEnglishLetters [${uniqueLetters.length}]: ${uniqueLetters}`
-  );
+  const log = obj => {
+    Object.entries(obj).forEach(([key, value]) => {
+      console.log(`${key} [${value.length}]: ${value}`);
+    });
+  };
+
+  log({ textTokens, allLetters, uniqueLetters, sortedEnglishLetters });
 })();
 ```
 
 #### JavaScript Concepts
-- const
+- IIFE
+- arrow functions
 - destructuring
-- array filtering/sorting
-- Set
+- Set (from/to array)
+- array map/filter/forEach/sort
+- Object.entries
 - string interpolation
+
