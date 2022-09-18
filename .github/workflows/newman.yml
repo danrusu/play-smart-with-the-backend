@@ -27,5 +27,5 @@ jobs:
       - uses: actions/upload-artifact@v3
         if: always()
         with:
-          name: my-artifact
+          name: api-test-report
           path: ./artifacts
