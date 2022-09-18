@@ -2,6 +2,8 @@ FROM node:18-alpine3.15
 
 WORKDIR /opt/test
 
+COPY postman/* ./
+
 RUN npm install -g \
   newman \
   newman-reporter-htmlextra \

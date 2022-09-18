@@ -71,5 +71,5 @@ newman run -h
   - run container
 
   ```bash
-  docker run --rm -v /$(pwd)/postman:/opt/test newman
+  docker run --rm -v /$(pwd)/reports:/opt/test/newman newman
   ```
