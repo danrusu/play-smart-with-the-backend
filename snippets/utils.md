@@ -12,6 +12,6 @@ const getRandomInRange = (from, to) =>
 ```javascript
 fetch('https://qatools.ro/testfiles/sportcar.json')
     .then(response => response.json())
-    .then(prettify
+    .then(prettify);
 ```    
 
