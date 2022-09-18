@@ -1,6 +1,6 @@
-### Chrome Dev Tools - UTILITIES SNIPPET
-- Save it in Chrome and test it 
-- You can find a simple test JSON at http://danrusu.ro/test/sportcar.json
+### Utilities snippet
+- Save it in Chrome Dev Tools and test it. 
+- You can find a simple test JSON at http://danrusu.ro/test/sportcar.json.
 
 ```javascript
 const prettify = json => JSON.stringify(json, null, 2);
