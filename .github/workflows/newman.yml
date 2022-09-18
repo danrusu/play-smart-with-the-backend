@@ -1,0 +1,20 @@
+name: API tests
+
+on:
+  # schedule:
+  #   - cron: '0 6 * * *' # each day at 6 AM
+  workflow_dispatch: # manualy triggered
+
+jobs:
+  api-tests:
+    name: API TESTS
+    runs-on: ubuntu-20.04
+    timeout-minutes: 10
+
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v2
+      - name: Build docker image
+        run: docker build -t newman .
+      - name: Run tests
+        run: docker run --rm -v /$(pwd)/postman:/opt/test newman
