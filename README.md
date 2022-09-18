@@ -26,9 +26,9 @@ npm install -g newman
 
 - usage help
 
-  ```bash
-  newman run -h
-  ```
+```bash
+newman run -h
+```
 
 - run the PLAY_SMART_WITH_THE_BACKEND collection
 
@@ -45,14 +45,16 @@ newman run PLAY_SMART_WITH_THE_BACKEND.postman_collection.json -e PLAY_SMART_WIT
 newman run PLAY_SMART_WITH_THE_BACKEND.postman_collection.json -e PLAY_SMART_WITH_THE_BACKEND.postman_environment.json --folder RESTFUL_BOOKER
 ```
 
-- newman reporters - install and run with reporters enabled
+- newman reporters
 
-```bash
-npm install -g newman-reporter-htmlextra
-npm install -g newman-reporter-junitfull
+  - install
 
-newman run PLAY_SMART_WITH_THE_BACKEND.postman_collection.json -e PLAY_SMART_WITH_THE_BACKEND.postman_environment.json -r json,cli,html,htmlextra,junitfull
+  ```bash
+   npm install -g newman-reporter-htmlextra newman-reporter-junitfull
+  ```
 
-cd newman
-ls
-```
+- run with reporters enabled
+
+  ```bash
+  newman run PLAY_SMART_WITH_THE_BACKEND.postman_collection.json -e PLAY_SMART_WITH_THE_BACKEND.postman_environment.json -r json,cli,html,htmlextra,junitfull
+  ```
