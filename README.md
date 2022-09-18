@@ -8,7 +8,7 @@
     
   - [Git](https://git-scm.com/downloads) - optional
 
-### 2. [Presentation](https://github.com/danrusu/play-smart-with-the-backend/blob/master/Play_smart_with_the_backend.pdf)
+### 2. [Presentation](https://docs.google.com/presentation/d/e/2PACX-1vSKkoE238IsDJx_WZs760ZtcsVynooZTk6yQ9mRXfYlPHkHvFOklIdbque6X6uDUw/pub?start=false&loop=false&delayms=60000)
 
 ### 3. Clone or download the repository
    ```
