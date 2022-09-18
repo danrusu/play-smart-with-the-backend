@@ -53,7 +53,7 @@ newman run PLAY_SMART_WITH_THE_BACKEND.postman_collection.json -e PLAY_SMART_WIT
    npm install -g newman-reporter-htmlextra newman-reporter-junitfull
   ```
 
-- run with reporters enabled
+  - run with reporters enabled
 
   ```bash
   newman run PLAY_SMART_WITH_THE_BACKEND.postman_collection.json -e PLAY_SMART_WITH_THE_BACKEND.postman_environment.json -r json,cli,html,htmlextra,junitfull
