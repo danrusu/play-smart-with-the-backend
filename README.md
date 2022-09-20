@@ -7,7 +7,7 @@
 - [Install Node.js](https://nodejs.org/en/download/)
 - [Git](https://git-scm.com/downloads) - optional
 
-### 2. [Presentation](https://docs.google.com/presentation/d/e/2PACX-1vSKkoE238IsDJx_WZs760ZtcsVynooZTk6yQ9mRXfYlPHkHvFOklIdbque6X6uDUw/pub?start=false&loop=false&delayms=60000)
+### 2. Presentation - [http://qatools.ro/postman](http://qatools.ro/postman)
 
 ### 3. Clone or download the repository
 
