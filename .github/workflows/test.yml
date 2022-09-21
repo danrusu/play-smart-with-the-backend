@@ -6,7 +6,7 @@ on:
   workflow_dispatch: # manualy triggered
   push:
     branches:
-      - main
+      - master
 
 jobs:
   api-tests:
