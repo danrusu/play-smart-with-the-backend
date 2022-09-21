@@ -1,8 +1,9 @@
 {
 	"info": {
-		"_postman_id": "831201cb-16d0-4057-8906-d3b84f38f650",
+		"_postman_id": "f7d3d22d-3dff-4b06-bd8c-7c3595121bb0",
 		"name": "PLAY_SMART_WITH_THE_BACKEND",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "6384621"
 	},
 	"item": [
 		{
@@ -14,9 +15,9 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "c5962fd8-0b2b-4c47-be8f-38ce8f49ec94",
 								"exec": [
-									"pm.environment.get('ENABLE_HELP_MESSAGES') && console.log(`'${pm.info.requestName}' Request Pre-request Script`);",
+									"pm.environment.get('ENABLE_HELP_MESSAGES') ",
+									"    && console.log(`'${pm.info.requestName}' Request Pre-request Script`);",
 									"",
 									"pm.globals.clear();",
 									"",
@@ -76,7 +77,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "a2307916-e931-40f8-9696-d6ae2afd5ffa",
 								"exec": [
 									"pm.environment.get('ENABLE_HELP_MESSAGES') && console.log(`'${pm.info.requestName}' Request Tests`);"
 								],
@@ -124,10 +124,9 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "0165a1fb-8984-43ca-8fb2-f61851a37a7f",
 								"exec": [
-									"pm.test('Status code is 200', ",
-									"    () =>pm.response.to.have.status(200)",
+									"pm.test('Status code is 200',",
+									"    () => pm.expect(pm.response.code).to.equal(200)",
 									");"
 								],
 								"type": "text/javascript"
@@ -156,9 +155,8 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "0165a1fb-8984-43ca-8fb2-f61851a37a7f",
 								"exec": [
-									"pm.test('Status code is 200', ",
+									"pm.test('Status code is 200',",
 									"    () => pm.response.to.have.status(200)",
 									");",
 									"",
@@ -166,9 +164,9 @@
 									"    () => {",
 									"        const ip = pm.response.json().ip;",
 									"        console.log(`ip: ${ip}`);",
-									"        ",
+									"",
 									"        const ipMatcherRegex = /^\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}$/;",
-									"        ",
+									"",
 									"        pm.expect(ip).to.match(ipMatcherRegex);",
 									"    }",
 									");"
@@ -198,7 +196,6 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "c5962fd8-0b2b-4c47-be8f-38ce8f49ec94",
 								"exec": [
 									""
 								],
@@ -208,7 +205,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "a2307916-e931-40f8-9696-d6ae2afd5ffa",
 								"exec": [
 									"const expectedUser = { ",
 									"    name: \"Mark Johnson\", ",
@@ -221,7 +217,7 @@
 									"const actualUser = pm.response.json().json;",
 									"",
 									"// Chai deep equal assertion",
-									"pm.test('Validate user (deep equal)', () => pm.expect(expectedUser).to.eql(actualUser));",
+									"pm.test('Validate user', () => pm.expect(expectedUser).to.deep.equal(actualUser));",
 									"",
 									"// Enhanced verification - one test / value",
 									"const deepTest = eval(globals.deepTest);",
@@ -247,7 +243,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{ \n\t\"name\": \"Mark Johnson\", \n\t\"age\": 31, \n\t\"isAdmin\": true, \n\t\"resourceIds\": [\n\t\t1111, \n\t\t1110, \n\t\t1113\n\t] \n}",
+							"raw": "{\n    \"name\": \"Mark Johnson\",\n    \"age\": 31,\n    \"isAdmin\": true,\n    \"resourceIds\": [\n        1111,\n        1110,\n        1113\n    ]\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -272,7 +268,6 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "c5962fd8-0b2b-4c47-be8f-38ce8f49ec94",
 								"exec": [
 									""
 								],
@@ -282,13 +277,12 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "a2307916-e931-40f8-9696-d6ae2afd5ffa",
 								"exec": [
 									"const expectedArgs = {",
-									"        \"company\": \"nagarro\",",
-									"        \"location\": \"timisoara\",",
-									"        \"department\": \"qa\"",
-									"    };",
+									"    \"company\": \"nagarro\",",
+									"    \"location\": \"timisoara\",",
+									"    \"department\": \"qa\"",
+									"};",
 									"const actualArgs = pm.response.json().args;",
 									"",
 									"const deepTest = eval(globals.deepTest);",
@@ -342,7 +336,6 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "c5962fd8-0b2b-4c47-be8f-38ce8f49ec94",
 								"exec": [
 									""
 								],
@@ -352,7 +345,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "a2307916-e931-40f8-9696-d6ae2afd5ffa",
 								"exec": [
 									"const expectedForm = {",
 									"    \"email\": \"danginkgo@yahoo.com\",",
@@ -392,12 +384,7 @@
 									"value": "danrusu",
 									"type": "text"
 								}
-							],
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
+							]
 						},
 						"url": {
 							"raw": "{{POSTMAN_ECHO_URL}}/post",
@@ -417,20 +404,19 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "0165a1fb-8984-43ca-8fb2-f61851a37a7f",
 								"exec": [
 									"const getHeader = eval(globals.getHeader);",
 									"const prettify = eval(globals.prettify);",
 									"",
-									"pm.test('Status code is 200', ",
-									"    () =>pm.response.to.have.status(200)",
+									"pm.test('Status code is 200',",
+									"    () => pm.response.to.have.statusCode(100)",
 									");",
 									"",
-									"pm.test('Status code name is OK',",
+									"pm.test('Status is OK',",
 									"    () => pm.response.to.have.status(\"OK\")",
 									");",
 									"",
-									"pm.test('Response time is above 2000ms', ",
+									"pm.test('Response time is above 2000ms',",
 									"    () => pm.expect(pm.response.responseTime).to.be.above(2000)",
 									");",
 									"",
@@ -443,8 +429,8 @@
 									"    }",
 									");",
 									"",
-									"pm.test('Response delay is 2', ",
-									"    () =>  pm.expect(pm.response.json().delay).to.eql(\"2\")",
+									"pm.test('Response delay is 2',",
+									"    () => pm.expect(pm.response.json().delay).to.eql(\"2\")",
 									");",
 									""
 								],
@@ -474,7 +460,6 @@
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "95db2334-dde7-4ab9-844d-addde171276c",
 						"type": "text/javascript",
 						"exec": [
 							"pm.environment.get('ENABLE_HELP_MESSAGES') && console.log('ECHO_SERVICE FOLDER Pre-request Scripts');",
@@ -485,15 +470,13 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "bdadc87d-58fe-4342-bf95-793beec688c0",
 						"type": "text/javascript",
 						"exec": [
 							"pm.environment.get('ENABLE_HELP_MESSAGES') && console.log('ECHO_SERVICE Folder Tests');"
 						]
 					}
 				}
-			],
-			"protocolProfileBehavior": {}
+			]
 		},
 		{
 			"name": "RESTFUL_BOOKER",
@@ -504,16 +487,15 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "27133bf9-421e-4b0b-9bf1-74c59e4a5505",
 								"exec": [
 									"pm.globals.clear();",
 									"",
-									"pm.test('Status code name is \"Created\"', ",
-									"    () => pm.response.to.have.status(\"Created\")",
+									"pm.test('Status code name is \"Created\"',",
+									"    () => pm.expect(pm.response.status).to.equal(\"Created\")",
 									");",
 									"",
-									"pm.test('Response text is \"Created\"', ",
-									"    () => pm.expect(pm.response.text()).to.eql(\"Created\")",
+									"pm.test('Response text is \"Created\"',",
+									"    () => pm.expect(pm.response.text()).to.equal(\"Created\")",
 									");",
 									""
 								],
@@ -523,7 +505,6 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "50a64363-0e4a-443c-abab-1edcafa9600a",
 								"exec": [
 									""
 								],
@@ -569,22 +550,16 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "22426ed2-1321-48be-9010-2e89e3f7e9f4",
 								"exec": [
-									"pm.test(\"Token is retrieven as a string\", function () {",
-									"    ",
-									"    var jsonData = pm.response.json(); // parse JSON from body",
-									"    ",
-									"    console.log(jsonData);",
-									"    console.log(JSON.stringify(jsonData, null, 2));",
-									"    console.log(`jsonData.token: ${jsonData.token}`);",
-									"    ",
-									"    console.log(`jsonData.value ${jsonData.value}`); // should be undefined",
-									"    pm.expect(jsonData.token).to.be.a('string');",
-									"    ",
-									"    // auto generated snipet - Set an environment variable",
-									"    // pm.globals.set(\"variable_key\", \"variable_value\");",
-									"    pm.globals.set(\"token\", jsonData.token);",
+									"pm.test(\"Valid token is fetched\", () => {",
+									"",
+									"    const token = pm.response.json()?.token;        ",
+									"    console.log(`token: ${token}`);",
+									"",
+									"    pm.expect(token).to.be.a('string')",
+									"        .and.to.have.lengthOf(15);",
+									"",
+									"    pm.globals.set(\"token\", token);",
 									"});",
 									""
 								],
@@ -594,7 +569,6 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "32067d93-e91f-48e8-b3fc-f741a9502537",
 								"exec": [
 									""
 								],
@@ -628,12 +602,11 @@
 					"response": []
 				},
 				{
-					"name": "bookings ids",
+					"name": "list bookings ids",
 					"event": [
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "4d64b293-208a-4f86-a466-9d18c4f0195f",
 								"exec": [
 									""
 								],
@@ -643,7 +616,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "a13a1fc3-bb5c-4cac-9357-a717dea1b3f9",
 								"exec": [
 									""
 								],
@@ -672,9 +644,8 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "f243060f-fb2a-4756-b1f8-11f833fd62db",
 								"exec": [
-									"const newBookingId = pm.response.json().bookingid;",
+									"const newBookingId = pm.response.json()?.bookingid;",
 									"console.log(`New booking id: ${newBookingId}`);",
 									"",
 									"pm.globals.set('newBookingId', newBookingId);"
@@ -685,7 +656,6 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "bca49a6c-bf22-443e-b6b8-27c9684a46f9",
 								"exec": [
 									""
 								],
@@ -730,7 +700,6 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "e676f020-1592-41c5-9bb2-a209f776b2a8",
 								"exec": [
 									""
 								],
@@ -740,7 +709,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "eef0023a-9454-4ef2-be7e-6df7edab294b",
 								"exec": [
 									""
 								],
@@ -770,7 +738,6 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "74710eec-6fac-4f4e-9bf3-b18a2593595a",
 								"exec": [
 									""
 								],
@@ -780,7 +747,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "f4276e33-94a1-4d6c-a44f-b16be39655f7",
 								"exec": [
 									""
 								],
@@ -836,7 +802,6 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "e9de7d4f-41da-441f-ada1-8aab933530fd",
 								"exec": [
 									""
 								],
@@ -846,7 +811,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "0820127e-398c-47f2-9eb7-89afa0762f3f",
 								"exec": [
 									""
 								],
@@ -876,7 +840,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"firstname\" : \"Jim\",\r\n    \"lastname\" : \"Brown\"\r\n}",
+							"raw": "{\r\n    \"firstname\" : \"James\",\r\n    \"lastname\" : \"Brown\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -902,7 +866,6 @@
 						{
 							"listen": "prerequest",
 							"script": {
-								"id": "ff17718e-e2fe-400a-9ed7-be1b58e0129d",
 								"exec": [
 									""
 								],
@@ -912,7 +875,6 @@
 						{
 							"listen": "test",
 							"script": {
-								"id": "edb1bea6-7b3a-4152-a8ad-c01e4a4b5d17",
 								"exec": [
 									""
 								],
@@ -922,19 +884,7 @@
 					],
 					"request": {
 						"auth": {
-							"type": "basic",
-							"basic": [
-								{
-									"key": "username",
-									"value": "admin@rms.com",
-									"type": "string"
-								},
-								{
-									"key": "password",
-									"value": "P@ssword1",
-									"type": "string"
-								}
-							]
+							"type": "noauth"
 						},
 						"method": "DELETE",
 						"header": [
@@ -952,13 +902,51 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"firstname\" : \"Jim\",\r\n    \"lastname\" : \"Brown\",\r\n    \"totalprice\" : 111,\r\n    \"depositpaid\" : true,\r\n    \"bookingdates\" : {\r\n        \"checkin\" : \"2020-01-01\",\r\n        \"checkout\" : \"2020-01-10\"\r\n    }\r\n}",
+							"raw": "",
 							"options": {
 								"raw": {
 									"language": "json"
 								}
 							}
 						},
+						"url": {
+							"raw": "{{RESTFULL_BOOKER_URL}}/booking/{{newBookingId}}",
+							"host": [
+								"{{RESTFULL_BOOKER_URL}}"
+							],
+							"path": [
+								"booking",
+								"{{newBookingId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "booking does not exist",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
 						"url": {
 							"raw": "{{RESTFULL_BOOKER_URL}}/booking/{{newBookingId}}",
 							"host": [
@@ -978,7 +966,6 @@
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "f8ec0231-dcc6-4037-be5a-4795cbf69b0f",
 						"type": "text/javascript",
 						"exec": [
 							""
@@ -988,28 +975,31 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "b2426a45-2ba3-4fa2-abce-3a1354bb364b",
 						"type": "text/javascript",
 						"exec": [
-							"pm.test(\"Status code is 200 or 201\", function () {",
-							"   pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+							"pm.test(\"Valid status code\", () => {",
+							"    console.log(JSON.stringify(pm.info.requestName))",
+							"    if (pm.info.requestName === 'booking does not exist') {",
+							"        pm.expect(pm.response.code).to.equal(404);",
+							"    }",
+							"    else {",
+							"        pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+							"    }",
 							"});",
 							"",
-							"pm.test(\"Response time is less than 1000ms\", function () {",
-							"    pm.expect(pm.response.responseTime).to.be.below(1000);",
-							"});"
+							"pm.test(\"Response time is less than 1000ms\", () =>",
+							"    pm.expect(pm.response.responseTime).to.be.below(1000)",
+							");"
 						]
 					}
 				}
-			],
-			"protocolProfileBehavior": []
+			]
 		}
 	],
 	"event": [
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "bea5ca71-8b10-425c-a11c-2bf12948a719",
 				"type": "text/javascript",
 				"exec": [
 					"pm.environment.get('ENABLE_HELP_MESSAGES') && console.log('PLAY_SMART_WITH_THE_BACKEND Collection Pre-request Scripts');",
@@ -1021,13 +1011,11 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "7c286389-5948-462f-ae79-637b5d683051",
 				"type": "text/javascript",
 				"exec": [
 					"pm.environment.get('ENABLE_HELP_MESSAGES') && console.log('PLAY_SMART_WITH_THE_BACKEND Collection Tests');"
 				]
 			}
 		}
-	],
-	"protocolProfileBehavior": {}
+	]
 }
