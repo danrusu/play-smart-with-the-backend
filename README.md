@@ -73,3 +73,5 @@ newman run -h
   ```bash
   docker run --rm -v /$(pwd)/reports:/opt/test/newman newman
   ```
+
+### 5. [Q & A](https://danrusu-github-api-server.herokuapp.com/)
