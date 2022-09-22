@@ -74,4 +74,6 @@ newman run -h
   docker run --rm -v /$(pwd)/reports:/opt/test/newman newman
   ```
 
-### 5. [Q & A](https://danrusu-github-api-server.herokuapp.com/)
+### 5. Q & A
+ - [questions form](https://danrusu-github-api-server.herokuapp.com/)
+ - [all posted questions](./questions.md) 
