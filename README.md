@@ -75,5 +75,5 @@ newman run -h
   ```
 
 ### 5. Q & A
- - [questions form](https://danrusu-github-api-server.herokuapp.com/)
- - [all posted questions](./questions.md) 
+ - (Questions form)(https://danrusu-github-api-server.herokuapp.com/) - available until 27 Sep 2022
+ - [Posted questions](./questions.md) 
