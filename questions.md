@@ -1,4 +1,5 @@
 # Q & A
 
-***
-De mentionat faptul ca newman se poate folosi si ca modul de node.js, ce permite o configurare in-depth a mai multor aspecte precum: pre-request, post-request, interventie la nivel de headers etc.
+|---|---|
+|Question|Answer|
+|Can `newman` be used programatically in Node.js? | Yes, you can require/import `newman` as npm package. Here is the reference to the [newman api](https://github.com/postmanlabs/newman#newmanrunoptions-object--callback-function--run-eventemitter)
